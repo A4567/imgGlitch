@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+	int shrink = 4;
 
 	ofSetBackgroundAuto(false);
 	ofBackground(0);
@@ -9,8 +10,8 @@ void ofApp::setup(){
 	ofBackground(0);
 	img.load("archie.jpg");
 	img2.load("luke.jpg");
-	img.resize(img.getWidth() / 8, img.getHeight() / 8);
-	img2.resize(img2.getWidth() / 8, img2.getHeight() / 8);
+	img.resize(img.getWidth() / shrink, img.getHeight() / shrink);
+	img2.resize(img2.getWidth() / shrink, img2.getHeight() / shrink);
 
 	cout << img.getHeight() << endl;
 	cout << img2.getHeight() << endl;
@@ -23,7 +24,7 @@ void ofApp::setup(){
 	imgPix2 = img2.getPixels();
 	paint2 = imgPix2.getColor(x, y);
 
-	segments = 50;
+	segments = 100;
 	segmentStart = 0;
 	segmentEnd = imgPix.getWidth() / segments;
 	b_drawn = false;
